@@ -12,6 +12,21 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
+        VStack() {
+        
+        HStack(alignment: .bottom) {
+            Text("Score: 100")
+            Button("Reset Game", action: resetGame)
+            
+        }
+        
+        Divider()
+        
+        Text("Fruit")
+            .font(Font.largeTitle)
+            .bold()
+        
+        VStack() {
         Grid(viewModel.cards) { card in
             CardView(card: card).onTapGesture {
                            self.viewModel.choose(card: card)
@@ -20,6 +35,12 @@ struct EmojiMemoryGameView: View {
         }
         .padding()
         .foregroundColor(Color.orange)
+            }
+        }
+    }
+    
+    func resetGame() {
+        
     }
 }
 
