@@ -12,11 +12,14 @@ class EmojiMemoryGame: ObservableObject {
     @Published private(set) var model: MemoryGame<String> = createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis: Array<String> = ["🎷", "🥁", "🪕", "🎻", "🎺"]
-        let range = 2..<emojis.count
-        let numberOfPairsOfCards = Int.random(in: range)
-        return MemoryGame<String>(numberOfPairsOfCards: numberOfPairsOfCards) { pairIndex in
-            return emojis[pairIndex]
+        let theme = ThemeFactory.shared.randomTheme()
+        var numberOfCards = theme.numberOfCards
+        if theme.numberOfCards == nil {
+            let range = 2..<theme.emojis.count
+            numberOfCards = Int.random(in: range)
+        }
+        return MemoryGame<String>(numberOfPairsOfCards: numberOfCards!) { pairIndex in
+            return theme.emojis[pairIndex]
         }
     }
       

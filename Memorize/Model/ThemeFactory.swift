@@ -1,5 +1,13 @@
-struct ThemeFactory {
-    static func createThemes() -> [Theme] {
+class ThemeFactory {
+    
+    static let shared = ThemeFactory()
+    var themes: [Theme]!
+    
+    init() {
+        createThemes()
+    }
+    
+    func createThemes() {
         var themes = [Theme]()
 
         var emojis = ["🦒", "🐪", "🦏", "🐘", "🦍", "🦓", "🐆"]
@@ -9,11 +17,11 @@ struct ThemeFactory {
                            colors: [.orange, .gray])
         themes.append(savana)
 
-        emojis = ["🐖", "🐐", "🐏", "🐓", "🐄", "🦃"]
-        let farm = Theme(name: "Farm",
+        emojis = ["🎷", "🥁", "🪕", "🎻", "🎺"]
+        let farm = Theme(name: "Music",
                          emojis: emojis,
                          numberOfCards: emojis.count,
-                         colors: [.yellow])
+                         colors: [.red])
         themes.append(farm)
 
         emojis = ["🌲", "🌳", "🌴", "🌵", "🎋"]
@@ -37,6 +45,10 @@ struct ThemeFactory {
                                    colors: [.blue, .gray, .black])
         themes.append(transportation)
         
-        return themes
+        self.themes = themes
+    }
+    
+    func randomTheme() -> Theme {
+        return themes.randomElement()!
     }
 }

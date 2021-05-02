@@ -26,6 +26,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
                 indexOfTheFaceUpCard = nil
             } else {
                 for index in cards.indices {
+                    
                     cards[index].isFaceUp = false
                 }
                 indexOfTheFaceUpCard = chosenIndex
