@@ -12,7 +12,7 @@ struct MemoryGame <CardContent> {
     var cards: Array<Card>
     
     mutating func choose(card: Card) {
-        guard let chosenIndex: Int = self.index(of: card) else {
+        guard let chosenIndex: Int = cards.firstIndex(matching: card) else {
             return
         }
         self.cards[chosenIndex].isFaceUp = !self.cards[chosenIndex].isFaceUp
@@ -26,15 +26,6 @@ struct MemoryGame <CardContent> {
             cards.append(Card(id: pairIndex*2 + 1, content: content))
         }
         cards.shuffle()
-    }
-    
-    func index(of card: Card) -> Int? {
-        for index in 0..<cards.count {
-            if cards[index].id == card.id {
-                return index
-            }
-        }
-        return nil
     }
     
     struct Card: Identifiable {

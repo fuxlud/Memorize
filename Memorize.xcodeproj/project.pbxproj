@@ -19,6 +19,7 @@
 		848992B6263E8C53005CB270 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992B5263E8C53005CB270 /* Grid.swift */; };
 		848992BC263E8F26005CB270 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992BB263E8F26005CB270 /* Theme.swift */; };
 		848992BE263E8F5D005CB270 /* ThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992BD263E8F5D005CB270 /* ThemeFactory.swift */; };
+		848992C0263E9BC5005CB270 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992BF263E9BC5005CB270 /* Array+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		848992B5263E8C53005CB270 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		848992BB263E8F26005CB270 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		848992BD263E8F5D005CB270 /* ThemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFactory.swift; sourceTree = "<group>"; };
+		848992BF263E9BC5005CB270 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				848992922636BCD2005CB270 /* Assets.xcassets */,
 				848992972636BCD2005CB270 /* LaunchScreen.storyboard */,
 				8489929A2636BCD2005CB270 /* Info.plist */,
+				848992BF263E9BC5005CB270 /* Array+Identifiable.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				8489928F2636BCC6005CB270 /* SceneDelegate.swift in Sources */,
 				848992B02637DD5F005CB270 /* MemoryGame.swift in Sources */,
 				848992B4263E8B94005CB270 /* GridLayot.swift in Sources */,
+				848992C0263E9BC5005CB270 /* Array+Identifiable.swift in Sources */,
 				848992BE263E8F5D005CB270 /* ThemeFactory.swift in Sources */,
 				848992912636BCC6005CB270 /* EmojiMemoryGameView.swift in Sources */,
 				848992B6263E8C53005CB270 /* Grid.swift in Sources */,
