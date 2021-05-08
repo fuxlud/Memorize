@@ -22,11 +22,15 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         }
         
         if !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
-            if let potentialMatchIndex = indexOfTheFaceUpCard {
-                if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+            if indexOfTheFaceUpCard != nil {
+                if cards[chosenIndex].content == cards[indexOfTheFaceUpCard!].content {
                     cards[chosenIndex].isMatched = true
-                    cards[potentialMatchIndex].isMatched = true
+                    cards[indexOfTheFaceUpCard!].isMatched = true
                     score += 2
+                } else {
+                    if cards[chosenIndex].isSeen {
+                        score -= 1
+                    }
                 }
                 indexOfTheFaceUpCard = nil
             } else {
@@ -38,6 +42,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             }
             
             self.cards[chosenIndex].isFaceUp = true
+            self.cards[chosenIndex].isSeen = true
         }
     }
     
@@ -59,6 +64,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         var id: Int
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var isSeen: Bool = false
         var content: CardContent
     }
 }
