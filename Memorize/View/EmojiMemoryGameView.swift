@@ -40,7 +40,7 @@ struct EmojiMemoryGameView: View {
     }
     
     func resetGame() {
-        
+        viewModel.resetGame()
     }
 }
 

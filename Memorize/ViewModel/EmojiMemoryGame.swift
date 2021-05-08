@@ -18,11 +18,15 @@ class EmojiMemoryGame: ObservableObject {
             let range = 2..<theme.emojis.count
             numberOfCards = Int.random(in: range)
         }
-        return MemoryGame<String>(numberOfPairsOfCards: numberOfCards!) { pairIndex in
+        return MemoryGame<String>(name: theme.name, colors: theme.colors, numberOfPairsOfCards: numberOfCards!) { pairIndex in
             return theme.emojis[pairIndex]
         }
     }
       
+    func resetGame() {
+        model = EmojiMemoryGame.createMemoryGame()
+    }
+    
     static func cardFont(numberOfCards: Int) -> Font {
         let largeNumberOfCards = 7
         return numberOfCards < largeNumberOfCards ? Font.largeTitle : Font.body
