@@ -14,35 +14,35 @@ class ThemeFactory {
         let savana = Theme(name: "Savana",
                            emojis: emojis,
                            numberOfCards: emojis.count,
-                           colors: [.orange, .gray])
+                           colors: [.orange, .yellow])
         themes.append(savana)
 
         emojis = ["🎷", "🥁", "🪕", "🎻", "🎺"]
         let farm = Theme(name: "Music",
                          emojis: emojis,
                          numberOfCards: emojis.count,
-                         colors: [.red])
+                         colors: [.red, .black])
         themes.append(farm)
 
         emojis = ["🌲", "🌳", "🌴", "🌵", "🎋"]
         let trees = Theme(name: "Trees",
                           emojis: emojis,
                           numberOfCards: emojis.count,
-                          colors: [.green])
+                          colors: [.green, .yellow])
         themes.append(trees)
 
         emojis = ["🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇"]
         let fruit = Theme(name: "Fruit",
                           emojis: emojis,
                           numberOfCards: nil,
-                          colors: [.red, .orange, .purple])
+                          colors: [.orange, .pink])
         themes.append(fruit)
 
         emojis = ["🛵", "🚑", "🚙", "🚂", "🚲", "🚀", "🚄"]
         let transportation = Theme(name: "Transportation",
                                    emojis: emojis,
                                    numberOfCards: nil,
-                                   colors: [.blue, .gray, .black])
+                                   colors: [.blue, .black])
         themes.append(transportation)
         
         self.themes = themes

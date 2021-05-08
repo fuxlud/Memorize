@@ -15,26 +15,26 @@ struct EmojiMemoryGameView: View {
         VStack() {
         
         HStack(alignment: .bottom) {
-            Text("Score: 100")
-            Button("Reset Game", action: resetGame)
-            
-        }
-        
-        Divider()
-        
-        Text(viewModel.name)
-            .font(Font.largeTitle)
-            .bold()
-        
-        VStack() {
-        Grid(viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                           self.viewModel.choose(card: card)
+                Text("Score: 100")
+                Button("Reset Game", action: resetGame)
+                
             }
-        .padding()
-        }
-        .padding()
-        .foregroundColor(viewModel.colors.first)
+            
+            Divider()
+            
+            Text(viewModel.name)
+                .font(Font.largeTitle)
+                .bold()
+            
+            VStack() {
+                Grid(viewModel.cards) { card in
+                    CardView(card: card, colors: self.viewModel.colors).onTapGesture {
+                                   self.viewModel.choose(card: card)
+                    }
+                    .padding()
+                    
+                }
+                .padding()
             }
         }
     }
@@ -46,14 +46,15 @@ struct EmojiMemoryGameView: View {
 
 struct CardView: View {
     var card: MemoryGame<String>.Card
+    var colors: [Color]
     
     var body: some View {
         GeometryReader() { geometry in
-            self.body(for: geometry.size)
+            self.body(for: geometry.size, colors: self.colors)
         }
     }
     
-    func body(for size: CGSize) -> some View {
+    func body(for size: CGSize, colors: [Color]) -> some View {
         ZStack {
             if card.isFaceUp {
                 RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
@@ -61,7 +62,10 @@ struct CardView: View {
                 Text(card.content)
             } else {
                 if !card.isMatched {
-                    RoundedRectangle(cornerRadius: cornerRadius).fill()
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                    .fill(
+                        LinearGradient(gradient: Gradient(colors: colors), startPoint: .bottomTrailing, endPoint: .leading)
+                    )
                 }
             }
         }
