@@ -36,6 +36,14 @@ class EmojiMemoryGame: ObservableObject {
         model.cards
     }
     
+    var name: String {
+        model.name
+    }
+    
+    var colors: [Color] {
+        model.colors
+    }
+    
     func choose(card: MemoryGame<String>.Card) {
         objectWillChange.send()
         model.choose(card: card)

@@ -22,7 +22,7 @@ struct EmojiMemoryGameView: View {
         
         Divider()
         
-        Text("Fruit")
+        Text(viewModel.name)
             .font(Font.largeTitle)
             .bold()
         
@@ -34,7 +34,7 @@ struct EmojiMemoryGameView: View {
         .padding()
         }
         .padding()
-        .foregroundColor(Color.orange)
+        .foregroundColor(viewModel.colors.first)
             }
         }
     }
