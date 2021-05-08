@@ -11,11 +11,13 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
+    
     var body: some View {
         VStack() {
         
+            
         HStack(alignment: .bottom) {
-                Text("Score: 100")
+                Text("Score: \(self.viewModel.score)")
                 Button("Reset Game", action: resetGame)
                 
             }

@@ -14,6 +14,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     var name: String
     var colors: [Color]
     var indexOfTheFaceUpCard: Int?
+    var score: Int = 0
     
     mutating func choose(card: Card) {
         guard let chosenIndex: Int = cards.firstIndex(matching: card) else {
@@ -25,6 +26,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += 2
                 }
                 indexOfTheFaceUpCard = nil
             } else {
