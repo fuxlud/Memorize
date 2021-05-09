@@ -58,46 +58,20 @@ struct CardView: View {
     
     func body(for size: CGSize, colors: [Color]) -> some View {
         ZStack {
-            if card.isFaceUp {
-                front()
-                Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(10))
-                    .fill(gradient(with: colors))
-                    .opacity(0.4)
-                    .padding(5)
-                Text(card.content)
-            } else {
-                if !card.isMatched {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(gradient(with: colors))
-                }
-            }
+            Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
+                .fill(gradient(with: colors))
+                .opacity(0.4)
+                .padding(5)
+            Text(card.content)
         }
-        .aspectRatio(self.aspectRatio, contentMode: .fit)
-        .font(Font.system(size: fontSize(for: size)))
-    }
-    
-    @ViewBuilder
-    func front() -> some View {
-        RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-        RoundedRectangle(cornerRadius: cornerRadius)
-            .stroke(gradient(with: colors),
-                    lineWidth:edgeLineWidth)
+        .modifier(Cardify(isFaceUp: card.isFaceUp, colors: colors, size: size))
+//        .cardify(isFaceUp: card.isFaceUp)
     }
     
     func gradient(with colors: [Color]) -> LinearGradient {
         LinearGradient(gradient: Gradient(colors: colors), startPoint: .bottomTrailing, endPoint: .leading)
     }
     
-    // MARK: Drawing Constants
-    
-    let cornerRadius: CGFloat = 10.0
-    let edgeLineWidth: CGFloat = 3
-    let aspectRatio: CGFloat = 0.6
-    let fontScaleFactor: CGFloat = 0.6
-    
-    func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * fontScaleFactor
-    }
 }
 
 
