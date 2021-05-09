@@ -20,7 +20,7 @@
 		848992BC263E8F26005CB270 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992BB263E8F26005CB270 /* Theme.swift */; };
 		848992BE263E8F5D005CB270 /* ThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992BD263E8F5D005CB270 /* ThemeFactory.swift */; };
 		848992C0263E9BC5005CB270 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992BF263E9BC5005CB270 /* Array+Identifiable.swift */; };
-		848992C2263EBBB8005CB270 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992C1263EBBB8005CB270 /* Card.swift */; };
+		848992C42647E942005CB270 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992C32647E942005CB270 /* Pie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		848992BB263E8F26005CB270 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		848992BD263E8F5D005CB270 /* ThemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFactory.swift; sourceTree = "<group>"; };
 		848992BF263E9BC5005CB270 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
-		848992C1263EBBB8005CB270 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		848992C32647E942005CB270 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				848992902636BCC6005CB270 /* EmojiMemoryGameView.swift */,
+				848992C32647E942005CB270 /* Pie.swift */,
 				848992B5263E8C53005CB270 /* Grid.swift */,
 				848992B3263E8B94005CB270 /* GridLayot.swift */,
 			);
@@ -126,7 +127,6 @@
 			children = (
 				848992BB263E8F26005CB270 /* Theme.swift */,
 				848992BD263E8F5D005CB270 /* ThemeFactory.swift */,
-				848992C1263EBBB8005CB270 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,9 +210,9 @@
 				848992C0263E9BC5005CB270 /* Array+Identifiable.swift in Sources */,
 				848992BE263E8F5D005CB270 /* ThemeFactory.swift in Sources */,
 				848992912636BCC6005CB270 /* EmojiMemoryGameView.swift in Sources */,
+				848992C42647E942005CB270 /* Pie.swift in Sources */,
 				848992B6263E8C53005CB270 /* Grid.swift in Sources */,
 				848992B22637DEB9005CB270 /* EmojiMemoryGame.swift in Sources */,
-				848992C2263EBBB8005CB270 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
