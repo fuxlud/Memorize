@@ -25,23 +25,21 @@ struct Cardify: ViewModifier {
             } else {
                 RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(gradient(with: colors))
-                
             }
         }
-        .aspectRatio(self.aspectRatio, contentMode: .fit)
-        .font(Font.system(size: fontSize(for: size)))
     }
     
     func gradient(with colors: [Color]) -> LinearGradient {
         LinearGradient(gradient: Gradient(colors: colors), startPoint: .bottomTrailing, endPoint: .leading)
     }
     // MARK: Drawing Constants
-   let aspectRatio: CGFloat = 0.6
-   let fontScaleFactor: CGFloat = 0.6
+
     private let cornerRadius: CGFloat = 10.0
     private let edgeLineWidth: CGFloat = 3
-    
-    func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * fontScaleFactor
+}
+
+extension View {
+    func cardify(isFaceUp: Bool, colors: [Color], size: CGSize) -> some View {
+        self.modifier(Cardify(isFaceUp: isFaceUp, colors: colors, size: size))
     }
 }

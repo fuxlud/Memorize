@@ -63,15 +63,22 @@ struct CardView: View {
                 .opacity(0.4)
                 .padding(5)
             Text(card.content)
+                .font(Font.system(size: fontSize(for: size)))
         }
-        .modifier(Cardify(isFaceUp: card.isFaceUp, colors: colors, size: size))
-//        .cardify(isFaceUp: card.isFaceUp)
+        .cardify(isFaceUp: card.isFaceUp, colors: colors, size: size)
+        .aspectRatio(self.aspectRatio, contentMode: .fit)
+    }
+    
+    func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * fontScaleFactor
     }
     
     func gradient(with colors: [Color]) -> LinearGradient {
         LinearGradient(gradient: Gradient(colors: colors), startPoint: .bottomTrailing, endPoint: .leading)
     }
     
+    let aspectRatio: CGFloat = 0.6
+    let fontScaleFactor: CGFloat = 0.6
 }
 
 
