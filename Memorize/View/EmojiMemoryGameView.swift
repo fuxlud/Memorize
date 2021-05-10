@@ -57,16 +57,16 @@ struct CardView: View {
     }
     
     func body(for size: CGSize, colors: [Color]) -> some View {
-        ZStack {
-            Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
-                .fill(gradient(with: colors))
-                .opacity(0.4)
-                .padding(5)
-            Text(card.content)
-                .font(Font.system(size: fontSize(for: size)))
-        }
-        .cardify(isFaceUp: card.isFaceUp, colors: colors, size: size)
-        .aspectRatio(self.aspectRatio, contentMode: .fit)
+            return ZStack {
+                Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
+                    .fill(gradient(with: colors))
+                    .opacity(0.4)
+                    .padding(5)
+                Text(card.content)
+                    .font(Font.system(size: fontSize(for: size)))
+            }
+            .cardify(isFaceUp: card.isFaceUp, colors: colors, size: size)
+            .aspectRatio(self.aspectRatio, contentMode: .fit)
     }
     
     func fontSize(for size: CGSize) -> CGFloat {
